@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Test Assignment</title>
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+			h1,
+			h2 {
+				margin-bottom: 10px;
+			}
+			textarea {
+				margin-bottom: 10px;
+			}
+			#appDock {
+				margin-bottom: 20px;
+				display: flex;
+				gap: 10px;
+			}
+			#appContainer {
+				margin-top: 20px;
+				border: 1px solid #ccc;
+				height: 600px;
+				overflow: hidden;
+			}
+			#appFrame {
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Metamask Connection</h1>
+		<button id="connectButton">Connect Metamask</button>
+		<div id="walletAddress"></div>
+		<div id="balanceOutput"></div>
+
+		<h2>SHA256 Hash Generator</h2>
+		<textarea id="inputText" rows="4" cols="50"></textarea><br />
+		<button id="hashButton">Generate SHA256 Hash</button>
+		<div id="hashOutput"></div>
+
+		<h2>Encryption Utility (AES)</h2>
+		<textarea id="encryptText" rows="4" cols="50"></textarea><br />
+		<label for="encryptionKey">Encryption Key:</label>
+		<input
+			type="text"
+			id="encryptionKey"
+			value="12345678901234567890123456789012"
+		/><br />
+		<button id="encryptButton">Encrypt</button>
+		<div id="encryptedOutput"></div>
+
+		<h2>Decryption Utility (AES)</h2>
+		<textarea id="decryptText" rows="4" cols="50"></textarea><br />
+		<label for="decryptionKey">Decryption Key:</label>
+		<input
+			type="text"
+			id="decryptionKey"
+			value="12345678901234567890123456789012"
+		/><br />
+		<button id="decryptButton">Decrypt</button>
+		<div id="decryptedOutput"></div>
+
+		<h2>App Dock Panel</h2>
+		<div id="appDock"></div>
+		<div id="appContainer">
+			<iframe id="appFrame" width="100%" height="600"></iframe>
+		</div>
+
+		<h2>Send Transaction</h2>
+		<label for="recipientAddress">Recipient Address:</label>
+		<input type="text" id="recipientAddress" value="" /><br />
+		<label for="amountEth">Amount ETH:</label>
+		<input type="text" id="amountEth" value="0.1" /><br />
+		<button id="sendTransactionButton">Send Transaction</button>
+
+		<script src="script.js"></script>
+	</body>
+</html>
